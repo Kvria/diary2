@@ -7,8 +7,15 @@
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<h1>DIARY</h1>
-<hr> 
+<div>
+  <h1>DIARY</h1>
+  <hr>
+  <ul>
+      <li *ngFor='let activity of Activity'>
+        {{activity.name}}
+      </li>
+  </ul>
+</div>
 
 
 
