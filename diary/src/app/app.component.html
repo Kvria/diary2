@@ -6,6 +6,17 @@
 <!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<div>
+  <h1>{{title}}</h1>
+      <p>My activity for today is {{ activity}}</p>
+      <p>Schedule: </p>
+        <ul>
+          <li *ngFor="let activity of activities">
+            {{ activity.name }}
+          </li>
+        </ul>
+        <p *ngIf= "activities.length > 4">There are many activities!</p>
+</div>
 
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
