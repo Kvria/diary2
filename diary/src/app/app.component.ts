@@ -10,7 +10,7 @@ import { Activity } from '../activity';
 })
 export class AppComponent {
   title = 'diary';
-  
+
   Activity = [
     new Activity(1,'Attending a business meeting','preparation for the business event next week'),
     new Activity(2,'Go to the office','make sure the packages were delivered'),

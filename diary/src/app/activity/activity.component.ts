@@ -20,6 +20,13 @@ export class ActivityComponent implements OnInit {
     this.Activity[index].showDescription = !this.Activity[index].showDescription;
   }
 
+  addNewActivity(activityl){
+    let ActivityLength = this.Activity.length;
+    Activity.id = ActivityLength+1;
+    Activity.completeDate = new Date(Activity.completeDate)
+    this.Activity.push(Activity)
+  }
+
   constructor() { }
 
   ngOnInit(): void {

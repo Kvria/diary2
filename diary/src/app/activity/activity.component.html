@@ -1,4 +1,4 @@
-
+<div class="container">
     <h1>Diary</h1>
     <hr>
     <ul>
@@ -6,10 +6,15 @@
        <li>{{activity.name}}</li>
        <button (click)='toggleDetails(i)'>Toggle Details</button>
        <app-activity-detail *ngIf='activity.showDescription' [activity]='activity'></app-activity-detail> 
-       <p>{{goal.description}}</p>
-       <button (click)= 'goalComplete(true)'>Complete</button>
+       <p>{{activity.description}}</p>
+       <p>This activity will is due in {{activity.completeDate|dateCount}} days</p>
+       <button (click)= 'activityComplete(true)'>Complete</button>
       </div>
     </ul>
+        <div class="container">/ul>
+            <div class="col-md-6">
+                <app-diary-form (addActivity)="addNewActivity($event)"></app-diary-form>
+           </div>
     <p *ngIf='activities.length > 5'>You have too many activities</p>
- 
+</div>
     
