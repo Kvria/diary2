@@ -8,7 +8,7 @@ import { Activity } from '../activity';
 })
 export class ActivityComponent implements OnInit {
 
-  Activity = [
+  activities:Activity[] = [
     new Activity(1,'Attending a business meeting','preparation for the business event next week',new Date(2020,3,14)),
     new Activity(2,'Go to the office','make sure the packages were delivered',new Date(2020,3,18)),
     new Activity(3,'Reply to emails','for inviting investors to the event',new Date(2020,3,14)),
@@ -16,17 +16,12 @@ export class ActivityComponent implements OnInit {
     new Activity(5,'Go for school event','Nicoles prize giving day',new Date(2020,3,30)),
   ];
 
-  toggleDetails(index){
-    this.Activity[index].showDescription = !this.Activity[index].showDescription;
+  createActivity(activity){
+    this.activities.push(activity)
   }
-
-  addNewActivity(activityl){
-    let ActivityLength = this.Activity.length;
-    Activity.id = ActivityLength+1;
-    Activity.completeDate = new Date(Activity.completeDate)
-    this.Activity.push(Activity)
+  deleteActivity(i){
+    this.activities.splice(i,1)
   }
-
   constructor() { }
 
   ngOnInit(): void {

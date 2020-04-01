@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { ActivityComponent } from './activity/activity.component';
 import { DateCountPipe } from './date-count.pipe';
 import { DiaryFormComponent } from './diary-form/diary-form.component';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { DiaryFormComponent } from './diary-form/diary-form.component';
     ActivityComponent,
     DateCountPipe,
     DiaryFormComponent,
+    HighlightDirective,
   ],
   imports: [
     BrowserModule,

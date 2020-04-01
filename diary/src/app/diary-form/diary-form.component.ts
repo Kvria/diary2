@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Activity } from '../activity';
 
 @Component({
   selector: 'app-diary-form',
@@ -7,11 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DiaryFormComponent implements OnInit {
 
-  newActivity = new Activity(0,"","",new Date());
-  @Output() addActivity = new EventEmitter<Activity>();
-
-  submitActivity(){
-this.addActivity.emit(this.newActivity);
+  newActivity:Activity = new Activity(0,"","",new Date())
+  @Output() addNewActivity = new EventEmitter <Activity>()
+  submitForm(){
+      this.addNewActivity.emit(this.newActivity)
+      this.newActivity = new Activity(0,"","",new Date())
+  }
   constructor() { }
 
   ngOnInit(): void {

@@ -1,20 +1,20 @@
 <div class="container">
     <h1>Diary</h1>
     <hr>
-    <ul>
-      <div *ngFor='let activity of activities'let i = index'>
-       <li>{{activity.name}}</li>
-       <button (click)='toggleDetails(i)'>Toggle Details</button>
-       <app-activity-detail *ngIf='activity.showDescription' [activity]='activity'></app-activity-detail> 
-       <p>{{activity.description}}</p>
-       <p>This activity will is due in {{activity.completeDate|dateCount}} days</p>
-       <button (click)= 'activityComplete(true)'>Complete</button>
-      </div>
-    </ul>
-        <div class="container">/ul>
+        <div class="row">
             <div class="col-md-6">
-                <app-diary-form (addActivity)="addNewActivity($event)"></app-diary-form>
-           </div>
-    <p *ngIf='activities.length > 5'>You have too many activities</p>
-</div>
+                <div *ngFor='let activity of activities ; let i = index'>
+                    <li>{{activity.title}}</li>
+                    <p>{{activity.description}}</p>
+                    <p>This activity will is due in {{activity.completeDate}} days</p>
+                    <button type="button" class="btn btn-danger" (click)="deleteActivity(i)">Delete</button>
+                </div>
+            </div>
     
+                <div class="col-md-6">
+                    <app-diary-form (addNewActivity) = 'createActivity($event)'></app-diary-form>
+                </div>
+                <p *ngIf='activities.length > 4'>You have too many activities</p>
+                
+        </div>
+</div>
