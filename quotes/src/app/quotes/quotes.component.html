@@ -1,0 +1,20 @@
+<div class="container">
+    <h1>QUOTES</h1>
+    <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <div *ngFor='let quote of quotes ; let i = index'>
+                    <li appHighlight>{{quote.username}}</li>
+                    <p>{{quote.description}}</p>
+                    <p>This  will is due in {{quote.completeDate|dateCount}} days</p>
+                    <button type="button" class="btn btn-danger" (click)="deleteQuote(i)">Delete</button>
+                </div>
+            </div>
+    
+                <div class="col-md-6">
+                    <app-quotes-form (addNewQuote) = 'createQuote($event)'></app-quotes-form>
+                </div>
+                <p *ngIf='quotes.length > 4'>You have too many quotes.</p>
+                
+        </div>
+</div>
