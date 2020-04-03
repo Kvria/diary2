@@ -4,10 +4,12 @@
         <div class="row">
             <div class="col-md-6">
                 <div *ngFor='let quote of quotes ; let i = index'>
-                    <li appHighlight>{{quote.username}}</li>
-                    <p>{{quote.description}}</p>
-                    <p>This  was posted in{{}} </p>
+                    <li appHighlight>{{quote.name}}</li>
+                    <p>{{quote.quote}}</p>
+                    <p>This  was posted in {{quote.postedOn|timeCount}} </p>
                     <button type="button" class="btn btn-danger" (click)="deleteQuote(i)">Delete</button>
+                    <button class="like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></button>
+                    <button class="dislike"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></button>
                 </div>
             </div>
     

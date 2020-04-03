@@ -8,7 +8,8 @@ import { QuotesFormComponent } from './quotes-form/quotes-form.component';
 import { QuotesComponent } from './quotes/quotes.component';
 import { TimeCountPipe } from './time-count.pipe';
 import { HighlightDirective } from './highlight.directive';
-import { AppVoteComponent } from './app-vote/app-vote.component';
+import { VoteCountComponent } from './vote-count/vote-count.component';
+
 
 @NgModule({
   declarations: [
@@ -17,11 +18,12 @@ import { AppVoteComponent } from './app-vote/app-vote.component';
     QuotesComponent,
     TimeCountPipe,
     HighlightDirective,
-    AppVoteComponent
+    VoteCountComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,33 +8,32 @@
 
                 <div class="form-group">
                     <label for="name">Username</label><br>
-                    <input required maxlength="1" name="name"  type="text" id="name" class="form-control" [(ngModel)]='newQuote.name' >
+                    <input required maxlength="15" name="name" type="text" id="name" class="form-control" [(ngModel)]='newQuote.name' #name='ngModel'>
                     <div class="alert alert-danger" *ngIf="name.touched && !name.valid"></div>
                     <div *ngIf="name.errors.required">Username is required.</div>
-                    <div *ngIf="name.errors.maxlength">Username is a maximum of 1 word </div>
+                    <div *ngIf="name.errors.maxlength">Username is a maximum of 15 characters</div>
                 </div>
     
                 <br>
     
                 <div class="form-group">
                     <label for="quote">Quote</label><br>
-                    <textarea class="form-control" name="quote" id="quote"  [(ngModel)]='newQuote.quote' ></textarea>
+                    <textarea class="form-control" name="quote" id="quote"   [(ngModel)]='newQuote.quote' ></textarea>
                 </div>
     
                 <br>
     
                 <div class="form-group">
-                    <label for="aname">Author</label><br>
-                    <input required maxlength="2"  name="aname" type="text" id="aname" class="form-control" [(ngModel)]='newQuote.aname' >
-                    <div *ngIf="name.errors.maxlength">Author's name is a maximum of 2 word </div>
+                    <label for="author">Author</label><br>
+                    <input required maxlength="20"  name="author"  type="text" id="author" class="form-control" #author='ngModel' [(ngModel)]='newQuote.author' >
+                    <div *ngIf="author.errors.maxlength">Author's name is a maximum of 2 characters. </div>
                 </div>
     
             </div>
             <div>
                 <button type="submit" class="btn btn-success">Save</button> 
             </div>
-            <button class="like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></button>
-            <button class="dislike"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></button>
+            
         </div>
     
     </form>
