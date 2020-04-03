@@ -6,7 +6,7 @@
                 <div *ngFor='let quote of quotes ; let i = index'>
                     <li appHighlight>{{quote.username}}</li>
                     <p>{{quote.description}}</p>
-                    <p>This  will is due in {{quote.completeDate|dateCount}} days</p>
+                    <p>This  will is due in {{}} days</p>
                     <button type="button" class="btn btn-danger" (click)="deleteQuote(i)">Delete</button>
                 </div>
             </div>

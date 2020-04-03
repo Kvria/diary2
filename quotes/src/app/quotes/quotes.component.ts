@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Quote } from '../quote';
 
 @Component({
   selector: 'app-quotes',
@@ -8,9 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class QuotesComponent implements OnInit {
 
   quotes:Quote[] = [
-    new Quote(1,'Attending a business meeting','preparation for the business event next week',new Date(2020,3,14)),
-    new Quote(2,'Go to the office','make sure the packages were delivered',new Date(2020,3,18)),
-    new Quote(3,'Reply to emails','for inviting investors to the event',new Date(2020,3,14)),
+    new Quote(1,'orangechicken','Creativity is intelligence having fun.','Albert Einstein',new Date(2020,3,14)),
+    new Quote(2,'luckymonkey','Work on you, for you.','Anonymous',new Date(2020,3,18)),
+    new Quote(3,'ninipanini','Sometimes you get the best light from a burning bridge.','Don Henley',new Date(2020,3,14)),
    
   ];
 
