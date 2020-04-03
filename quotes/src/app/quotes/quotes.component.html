@@ -8,8 +8,8 @@
                     <p>{{quote.quote}}</p>
                     <p>This  was posted in {{quote.postedOn|timeCount}} </p>
                     <button type="button" class="btn btn-danger" (click)="deleteQuote(i)">Delete</button>
-                    <button class="like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></button>
-                    <button class="dislike"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></button>
+                    <button (click)="like(i)" class="btn btn-primary">{{quote.likes}}</button>
+                    <button (click)="dislike(i)" class="btn btn-success">{{quote.dislikes}}</button>
                 </div>
             </div>
     

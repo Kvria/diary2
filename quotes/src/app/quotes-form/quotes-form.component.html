@@ -11,7 +11,7 @@
                     <input required maxlength="15" name="name" type="text" id="name" class="form-control" [(ngModel)]='newQuote.name' #name='ngModel'>
                     <div class="alert alert-danger" *ngIf="name.touched && !name.valid"></div>
                     <div *ngIf="name.errors.required">Username is required.</div>
-                    <div *ngIf="name.errors.maxlength">Username is a maximum of 15 characters</div>
+                    <div *ngIf="name.errors.maxlength">Username is a maximum of 15 characters.</div>
                 </div>
     
                 <br>
